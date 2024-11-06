@@ -13,8 +13,8 @@ on:
 
 
 jobs:
-  build-push:
-    name: Build and Push to Registry
+  k8s-deployment-restart:
+    name: K8S deployment restart
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
