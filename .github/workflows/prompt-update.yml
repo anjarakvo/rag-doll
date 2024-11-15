@@ -8,7 +8,7 @@ on:
       - assistant/sources/prompt.csv
 
 jobs:
-  build-and-push:
+  build-push:
     name: Build and Push to Registry
     runs-on: ubuntu-latest
     steps:
