@@ -12,15 +12,12 @@ jobs:
   build-push:
     name: Build and Push to Registry
     runs-on: ubuntu-latest
+    if: ${{ contains(github.event.head_commit.modified, 'assistant/sources/prompt.csv') && github.event.head_commit.modified | length == 1 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           path: src
-
-      - name: Skip action if other files changed
-        if: ${{ !(contains(github.event.head_commit.modified, 'assistant/sources/prompt.csv') && github.event.head_commit.modified | length == 1) }}
-        run: echo "Skipping action because other files were changed." && exit 0
 
       - name: Checkout Akvo composite actions
         uses: actions/checkout@v4
