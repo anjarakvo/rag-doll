@@ -7,6 +7,7 @@ on:
     paths:
       - assistant/sources/prompt.csv
 
+
 jobs:
   build-push:
     name: Build and Push to Registry
