@@ -12,7 +12,7 @@ jobs:
   build-push:
     name: Build and Push to Registry
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.head_commit.modified, 'assistant/sources/prompt.csv') && github.event.head_commit.modified | length == 1 }}
+    if: ${{ contains(github.event.head_commit.modified, 'assistant/sources/prompt.csv') && github.event.head_commit.modified == ['assistant/sources/prompt.csv'] }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
